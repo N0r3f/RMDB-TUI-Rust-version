@@ -1,0 +1,54 @@
+[package]
+name = "rmdb"
+version = "0.1.0"
+edition = "2021"
+
+[profile.release]
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
+
+[[bin]]
+name = "rmdb"
+path = "src/main.rs"
+
+[lib]
+name = "rmdb"
+path = "src/lib.rs"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4"
+ureq = { version = "2.9", features = ["json"] }
+
+[features]
+default = []
+gui-gtk = ["gtk", "gio", "glib", "pango", "cairo-rs", "gdk-pixbuf"]
+
+[dependencies.gtk]
+version = "0.18"
+features = ["v3_24"]
+optional = true
+
+[dependencies.gio]
+version = "0.18"
+optional = true
+
+[dependencies.glib]
+version = "0.18"
+optional = true
+
+[dependencies.pango]
+version = "0.18"
+optional = true
+
+[dependencies.cairo-rs]
+version = "0.18"
+optional = true
+
+[dependencies.gdk-pixbuf]
+version = "0.18"
+optional = true
+
