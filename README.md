@@ -83,5 +83,3 @@ cargo build --release
 - Terminal d'au moins 80x24 caractères
 - Accès au serveur RMDB (pour les fonctionnalités complètes)
 
-Voir `.ai-core/README.md` pour la documentation complète.
-
